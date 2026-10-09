@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shivam Kumar | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center items horizontally */
+        }
+
+        /* --- Naya Code Photo ke liye --- */
+        .profile-img {
+            width: 150px;       /* Photo ka size */
+            height: 150px;      /* Photo ka size (square) */
+            border-radius: 50%; /* Gol banane ke liye */
+            object-fit: cover;  /* Photo ko stretch hone se bachane ke liye */
+            border: 4px solid #fff; /* Photo ke aas paas white border */
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Halki shadow */
+            margin-bottom: 20px; /* Name se thoda gap */
+        }
+        /* ---------------------------------- */
+
+        header h1 {
+            font-size: 2.5rem;
+            color: var(--text-main);
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        section {
+            margin-bottom: 35px;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--text-main);
+            border-left: 4px solid var(--primary);
+            padding-left: 12px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .card p, .card li {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            text-decoration: none;
+            background: var(--card-bg);
+            color: var(--primary);
+            padding: 10px 20px;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            color: #fff;
+            border-color: var(--primary);
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .skill-tag {
+            background: #eff6ff;
+            color: var(--primary);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        footer {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 2rem; }
+            .container { padding: 20px 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header / Home (Updated with Photo) -->
+        <header>
+            <!-- Aapko yeh line add karni hai. Apni photo ka naam yahan likhein -->
+            <img src="photo.jpg" alt="Shivam Kumar" class="profile-img">
+
+            <h1>Shivam Kumar</h1>
+            <p>B.Tech Biotechnology Student</p>
+        </header>
+
+        <!-- 1. Home / About Me Section -->
+        <section>
+            <h2>1. About Me</h2>
+            <div class="card">
+                <p>Hi, I am a first-year student pursuing my degree at Lovely Professional University. I am passionate about combining life sciences with technology, coding, and problem-solving to build impactful projects.</p>
+            </div>
+        </section>
+
+        <!-- 2. Career Objective / Pathway -->
+        <section>
+            <h2>2. Career Objective / Pathway</h2>
+            <div class="card">
+                <p>My goal is to explore Biotechnology deeply while building strong foundations in core life sciences, biological research, and technical systems. I aim to create innovative tech-driven solutions for real-world biological and engineering challenges.</p>
+            </div>
+        </section>
+
+        <!-- 3. Education Section -->
+        <section>
+            <h2>3. Education</h2>
+            <div class="card">
+                <ul>
+                    <li><strong>B.Tech in Biotechnology:</strong> Lovely Professional University (2026 – 2030)</li>
+                    <li><strong>Class 12th / High School:</strong> Modern English School, Nawada (Bihar) — 80% marks</li>
+                    <li><strong>Class 10th:</strong> 72.6% marks</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 4. Professional Links Section -->
+        <section>
+            <h2>4. Professional Links</h2>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/shivam-kumar-a03789437?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank">LinkedIn Profile</a>
+                <a href="https://github.com/sk604246282-rgb" target="_blank">GitHub Profile</a>
+            </div>
+        </section>
+
+        <!-- 5. Skills & Future Goals Section -->
+        <section>
+            <h2>5. Skills & Future Goals</h2>
+            <div class="card">
+                <p><strong>Core Skills:</strong></p>
+                <div class="skills-list">
+                    <span class="skill-tag">Python (Basic)</span>
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">Cybersecurity</span>
+                    <span class="skill-tag">Microsoft Word</span>
+                    <span class="skill-tag">Microsoft Excel</span>
+                    <span class="skill-tag">Communication</span>
+                    <span class="skill-tag">Problem Solving</span>
+                </div>
+                <p style="margin-top: 15px;"><strong>Upcoming Milestones & Goals:</strong></p>
+                <ul>
+                    <li>Complete online certifications in Python programming and Cybersecurity bootcamp.</li>
+                    <li>Build and showcase hardware/IoT automation projects during the first year.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2026 Shivam Kumar. All rights reserved.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
