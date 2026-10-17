@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shivam Kumar | Portfolio</title>
-    <!-- Google Fonts & Font Awesome Icons -->
+    <!-- Google Fonts & Font Awesome Pro Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         :root {
             --bg-color: #0b0f19;
@@ -118,12 +118,21 @@
             color: #ffffff;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
 
-        .section-title i {
+        .section-title-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: rgba(59, 130, 246, 0.15);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: var(--primary);
             font-size: 1.1rem;
+            box-shadow: 0 0 10px var(--primary-glow);
         }
 
         .card {
@@ -153,18 +162,27 @@
             border: 1px solid var(--card-border);
             padding: 18px;
             border-radius: 14px;
+            position: relative;
         }
 
         .edu-card h3 {
             font-size: 1rem;
             color: #fff;
             margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .edu-card h3 i {
+            color: var(--accent);
+            font-size: 0.9rem;
         }
 
         .edu-card .inst {
             font-size: 0.88rem;
-            color: var(--accent);
-            margin-bottom: 8px;
+            color: var(--text-muted);
+            margin-bottom: 10px;
         }
 
         .edu-card .score {
@@ -172,9 +190,11 @@
             font-weight: 600;
             color: #4ade80;
             background: rgba(74, 222, 128, 0.1);
-            padding: 2px 8px;
+            padding: 3px 10px;
             border-radius: 6px;
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
         }
 
         /* Skills Badges */
@@ -190,12 +210,23 @@
             color: var(--text-main);
             border: 1px solid var(--card-border);
             padding: 8px 16px;
-            border-radius: 10px;
+            border-radius: 12px;
             font-size: 0.88rem;
             font-weight: 500;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
+            transition: all 0.2s ease;
+        }
+
+        .skill-badge i {
+            font-size: 1.05rem;
+        }
+
+        .skill-badge:hover {
+            border-color: var(--primary);
+            box-shadow: 0 0 12px var(--primary-glow);
+            transform: translateY(-2px);
         }
 
         .domain-list, .achievements-list {
@@ -204,26 +235,32 @@
 
         .domain-list li, .achievements-list li {
             position: relative;
-            padding-left: 24px;
+            padding-left: 32px;
             color: var(--text-muted);
             font-size: 0.95rem;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
         }
 
         .achievements-list li::before {
-            content: '🏆';
+            content: "\f135";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
             position: absolute;
             left: 0;
-            top: 0;
-            font-size: 0.85rem;
+            color: #f59e0b;
+            font-size: 1rem;
         }
 
         .domain-list li::before {
-            content: '📌';
+            content: "\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
             position: absolute;
             left: 0;
-            top: 0;
-            font-size: 0.85rem;
+            color: var(--accent);
+            font-size: 0.9rem;
         }
 
         /* Footer / Contact Section */
@@ -238,21 +275,29 @@
             background: var(--glass-bg);
             border: 1px solid var(--card-border);
             padding: 16px;
-            border-radius: 12px;
+            border-radius: 14px;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 14px;
             text-decoration: none;
             color: var(--text-main);
-            transition: background 0.2s ease;
+            transition: all 0.2s ease;
         }
 
         .contact-card:hover {
             background: rgba(59, 130, 246, 0.15);
             border-color: var(--primary);
+            transform: translateY(-2px);
         }
 
-        .contact-card i {
+        .contact-card-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-size: 1.2rem;
             color: var(--primary);
         }
@@ -261,6 +306,7 @@
             font-size: 0.75rem;
             color: var(--text-muted);
             text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .contact-info .val {
@@ -269,11 +315,19 @@
         }
 
         .ref-box {
-            margin-top: 15px;
+            margin-top: 18px;
             padding-top: 15px;
             border-top: 1px dashed var(--card-border);
-            font-size: 0.85rem;
+            font-size: 0.88rem;
             color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .ref-box i {
+            color: var(--primary);
+            font-size: 1.1rem;
         }
 
         footer {
@@ -306,7 +360,8 @@
         <!-- 1. About Me -->
         <section>
             <div class="section-title">
-                <i class="fa-solid fa-user"></i> 1. About Me
+                <div class="section-title-icon"><i class="fa-solid fa-user-astronaut"></i></div>
+                <span>1. About Me</span>
             </div>
             <div class="card">
                 <p>I am a dedicated B.Tech Biotechnology student at Lovely Professional University, deeply passionate about exploring the fundamental principles of life sciences, molecular biology, and biological systems. My focus is on developing a strong academic and practical foundation in biotechnology to contribute to research, biological analysis, and healthcare advancements.</p>
@@ -316,7 +371,8 @@
         <!-- 2. Career Pathway / Objective -->
         <section>
             <div class="section-title">
-                <i class="fa-solid fa-compass"></i> 2. Career Pathway / Objective
+                <div class="section-title-icon"><i class="fa-solid fa-bullseye"></i></div>
+                <span>2. Career Pathway / Objective</span>
             </div>
             <div class="card">
                 <p>My goal is to explore Biotechnology deeply while building strong foundations in core life sciences, biological research, molecular biology, and bio-processing. I aim to build a successful career in life sciences and research to contribute to innovative biological, healthcare, and environmental solutions.</p>
@@ -326,23 +382,24 @@
         <!-- 3. Education -->
         <section>
             <div class="section-title">
-                <i class="fa-solid fa-graduation-cap"></i> 3. Education
+                <div class="section-title-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                <span>3. Education</span>
             </div>
             <div class="edu-grid">
                 <div class="edu-card">
-                    <h3>B.Tech in Biotechnology</h3>
+                    <h3><i class="fa-solid fa-dna"></i> B.Tech in Biotechnology</h3>
                     <div class="inst">Lovely Professional University</div>
-                    <span class="score">2026 – 2030</span>
+                    <span class="score"><i class="fa-regular fa-calendar-check"></i> 2026 – 2030</span>
                 </div>
                 <div class="edu-card">
-                    <h3>Class 12th (Senior Secondary)</h3>
-                    <div Class="inst">Utkramit Uchch Madhyamik Vidyalay,Badhauna(Nawada)</div>
-                    <span class="score">80% Marks</span>
+                    <h3><i class="fa-solid fa-microscope"></i> Class 12th (Senior Sec.)</h3>
+                    <div class="inst">Modern English School, Nawada</div>
+                    <span class="score"><i class="fa-solid fa-award"></i> 80% Marks</span>
                 </div>
                 <div class="edu-card">
-                    <h3>Class 10th (Secondary)</h3>
-                    <div class="inst">Modern English School(Nawada)</div>
-                    <span class="score">72.6% Marks</span>
+                    <h3><i class="fa-solid fa-school"></i> Class 10th (Secondary)</h3>
+                    <div class="inst">Modern English School</div>
+                    <span class="score"><i class="fa-solid fa-award"></i> 72.6% Marks</span>
                 </div>
             </div>
         </section>
@@ -350,17 +407,18 @@
         <!-- 4. Skills, Achievements & Target Internship Domains -->
         <section>
             <div class="section-title">
-                <i class="fa-solid fa-code"></i> 4. Skills & Achievements
+                <div class="section-title-icon"><i class="fa-solid fa-layer-group"></i></div>
+                <span>4. Skills & Achievements</span>
             </div>
             <div class="card">
                 <p style="color: #fff; font-weight: 600; margin-bottom: 12px;">Core Skills:</p>
                 <div class="skills-grid">
                     <span class="skill-badge"><i class="fa-brands fa-python" style="color:#38bdf8;"></i> Python (Basic)</span>
                     <span class="skill-badge"><i class="fa-brands fa-java" style="color:#f87171;"></i> Java</span>
-                    <span class="skill-badge"><i class="fa-solid fa-shield-halved" style="color:#34d399;"></i> Cybersecurity</span>
-                    <span class="skill-badge"><i class="fa-regular fa-file-word" style="color:#60a5fa;"></i> Microsoft Word</span>
-                    <span class="skill-badge"><i class="fa-regular fa-file-excel" style="color:#4ade80;"></i> Microsoft Excel</span>
-                    <span class="skill-badge"><i class="fa-solid fa-comments" style="color:#fbbf24;"></i> Communication</span>
+                    <span class="skill-badge"><i class="fa-solid fa-user-shield" style="color:#34d399;"></i> Cybersecurity</span>
+                    <span class="skill-badge"><i class="fa-solid fa-file-word" style="color:#60a5fa;"></i> Microsoft Word</span>
+                    <span class="skill-badge"><i class="fa-solid fa-file-excel" style="color:#4ade80;"></i> Microsoft Excel</span>
+                    <span class="skill-badge"><i class="fa-solid fa-comments-dollar" style="color:#fbbf24;"></i> Communication</span>
                     <span class="skill-badge"><i class="fa-solid fa-brain" style="color:#c084fc;"></i> Problem Solving</span>
                 </div>
 
@@ -383,51 +441,31 @@
         <!-- 5. Contact & Reference Section -->
         <section>
             <div class="section-title">
-                <i class="fa-solid fa-address-book"></i> 5. Contact & Professional References
+                <div class="section-title-icon"><i class="fa-solid fa-address-card"></i></div>
+                <span>5. Contact & Professional References</span>
             </div>
             <div class="card">
                 <div class="contact-grid">
                     <a href="mailto:your-email@example.com" class="contact-card">
-                        <i class="fa-solid fa-envelope"></i>
+                        <div class="contact-card-icon"><i class="fa-solid fa-paper-plane" style="color:#38bdf8;"></i></div>
                         <div class="contact-info">
                             <div class="label">Email</div>
-                            <div class="val">sk604246282@gmail.com</div>
+                            <div class="val">Add Email ID</div>
                         </div>
                     </a>
                     <a href="tel:+91XXXXXXXXXX" class="contact-card">
-                        <i class="fa-solid fa-phone"></i>
+                        <div class="contact-card-icon"><i class="fa-solid fa-headset" style="color:#4ade80;"></i></div>
                         <div class="contact-info">
                             <div class="label">Phone</div>
-                            <div class="val">9973075004</div>
+                            <div class="val">Add Phone No.</div>
                         </div>
                     </a>
                     <a href="https://www.linkedin.com/in/shivam-kumar-a03789437" target="_blank" class="contact-card">
-                        <i class="fa-brands fa-linkedin"></i>
+                        <div class="contact-card-icon"><i class="fa-brands fa-linkedin-in" style="color:#0a66c2;"></i></div>
                         <div class="contact-info">
                             <div class="label">LinkedIn</div>
                             <div class="val">Shivam Kumar</div>
                         </div>
                     </a>
-                    <a href="https://github.com/sk604246282-rgb" target="_blank" class="contact-card">
-                        <i class="fa-brands fa-github"></i>
-                        <div class="contact-info">
-                            <div class="label">GitHub</div>
-                            <div class="val">sk604246282-rgb</div>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="ref-box">
-                    <i class="fa-solid fa-circle-info" style="color: var(--primary);"></i> <strong>Reference Note:</strong> Academic credentials and project references are available upon request through Lovely Professional University.
-                </div>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer>
-            <p>&copy; 2026 Shivam Kumar. All rights reserved.</p>
-        </footer>
-    </div>
-
-</body>
-</html>
+                    <a href="
+                        
