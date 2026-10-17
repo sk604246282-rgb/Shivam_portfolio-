@@ -4,227 +4,422 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shivam Kumar | Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --bg-color: #f8fafc;
-            --card-bg: #ffffff;
-            --text-main: #1e293b;
-            --text-muted: #64748b;
-            --border: #e2e8f0;
+            --bg-color: #0b0f19;
+            --card-bg: rgba(23, 31, 48, 0.7);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --primary: #3b82f6;
+            --primary-glow: rgba(59, 130, 246, 0.35);
+            --accent: #06b6d4;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --glass-bg: rgba(255, 255, 255, 0.03);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
         }
 
         body {
-            font-family: 'Inter', sans-serif;
             background-color: var(--bg-color);
             color: var(--text-main);
             line-height: 1.6;
+            min-height: 100vh;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.12) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(6, 182, 212, 0.12) 0%, transparent 40%);
+            background-attachment: fixed;
+            padding: 40px 20px;
         }
 
         .container {
             max-width: 900px;
             margin: 0 auto;
-            padding: 40px 20px;
         }
 
+        /* Profile Header */
         header {
             text-align: center;
-            margin-bottom: 40px;
-            padding-bottom: 30px;
-            border-bottom: 1px solid var(--border);
-            display: flex;
-            flex-direction: column;
-            align-items: center; /* Center items horizontally */
+            padding: 40px 20px;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            backdrop-filter: blur(12px);
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
         }
 
-        /* --- Naya Code Photo ke liye --- */
-        .profile-img {
-            width: 150px;       /* Photo ka size */
-            height: 150px;      /* Photo ka size (square) */
-            border-radius: 50%; /* Gol banane ke liye */
-            object-fit: cover;  /* Photo ko stretch hone se bachane ke liye */
-            border: 4px solid #fff; /* Photo ke aas paas white border */
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Halki shadow */
-            margin-bottom: 20px; /* Name se thoda gap */
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
         }
-        /* ---------------------------------- */
+
+        .profile-wrapper {
+            position: relative;
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 20px;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 25px var(--primary-glow);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-wrapper:hover .profile-img {
+            transform: scale(1.03);
+        }
 
         header h1 {
-            font-size: 2.5rem;
-            color: var(--text-main);
-            margin-bottom: 10px;
+            font-size: 2.4rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 6px;
         }
 
         header p {
-            font-size: 1.2rem;
-            color: var(--primary);
-            font-weight: 500;
+            font-size: 1.1rem;
+            color: var(--accent);
+            font-weight: 600;
+            letter-spacing: 0.5px;
         }
 
+        /* Section Layout */
         section {
-            margin-bottom: 35px;
+            margin-bottom: 25px;
         }
 
-        h2 {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-            color: var(--text-main);
-            border-left: 4px solid var(--primary);
-            padding-left: 12px;
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title i {
+            color: var(--primary);
+            font-size: 1.1rem;
         }
 
         .card {
             background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 24px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
-        .card p, .card li {
+        .card p {
             color: var(--text-muted);
-            font-size: 0.95rem;
+            font-size: 0.98rem;
+            line-height: 1.7;
+        }
+
+        /* Education Grid */
+        .edu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .edu-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--card-border);
+            padding: 18px;
+            border-radius: 14px;
+        }
+
+        .edu-card h3 {
+            font-size: 1rem;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+
+        .edu-card .inst {
+            font-size: 0.88rem;
+            color: var(--accent);
             margin-bottom: 8px;
         }
 
-        ul {
-            list-style-type: disc;
-            padding-left: 20px;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-
-        .social-links a {
-            text-decoration: none;
-            background: var(--card-bg);
-            color: var(--primary);
-            padding: 10px 20px;
-            border-radius: 6px;
-            border: 1px solid var(--border);
-            font-size: 0.95rem;
+        .edu-card .score {
+            font-size: 0.85rem;
             font-weight: 600;
-            transition: all 0.2s ease;
+            color: #4ade80;
+            background: rgba(74, 222, 128, 0.1);
+            padding: 2px 8px;
+            border-radius: 6px;
+            display: inline-block;
         }
 
-        .social-links a:hover {
-            background: var(--primary);
-            color: #fff;
-            border-color: var(--primary);
-        }
-
-        .skills-list {
+        /* Skills Badges */
+        .skills-grid {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
-            margin-top: 10px;
+            margin-bottom: 20px;
         }
 
-        .skill-tag {
-            background: #eff6ff;
-            color: var(--primary);
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-size: 0.85rem;
+        .skill-badge {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-main);
+            border: 1px solid var(--card-border);
+            padding: 8px 16px;
+            border-radius: 10px;
+            font-size: 0.88rem;
             font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .domain-list, .achievements-list {
+            list-style: none;
+        }
+
+        .domain-list li, .achievements-list li {
+            position: relative;
+            padding-left: 24px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+        }
+
+        .achievements-list li::before {
+            content: '🏆';
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 0.85rem;
+        }
+
+        .domain-list li::before {
+            content: '📌';
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 0.85rem;
+        }
+
+        /* Footer / Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .contact-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--card-border);
+            padding: 16px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text-main);
+            transition: background 0.2s ease;
+        }
+
+        .contact-card:hover {
+            background: rgba(59, 130, 246, 0.15);
+            border-color: var(--primary);
+        }
+
+        .contact-card i {
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+
+        .contact-info .label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        .contact-info .val {
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .ref-box {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px dashed var(--card-border);
+            font-size: 0.85rem;
+            color: var(--text-muted);
         }
 
         footer {
             text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid var(--border);
+            padding: 25px 0;
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+            border-top: 1px solid var(--card-border);
             margin-top: 40px;
         }
 
         @media (max-width: 600px) {
-            header h1 { font-size: 2rem; }
-            .container { padding: 20px 15px; }
+            body { padding: 20px 12px; }
+            header h1 { font-size: 1.8rem; }
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- Header / Home (Updated with Photo) -->
+        <!-- Header -->
         <header>
-            <!-- Aapko yeh line add karni hai. Apni photo ka naam yahan likhein -->
-            <img src="photo.jpg.png" alt="Shivam Kumar" class="profile-img">
-
+            <div class="profile-wrapper">
+                <img src="photo.jpg.png" alt="Shivam Kumar" class="profile-img">
+            </div>
             <h1>Shivam Kumar</h1>
             <p>B.Tech Biotechnology Student</p>
         </header>
 
-        <!-- 1. Home / About Me Section -->
+        <!-- 1. About Me -->
         <section>
-            <h2>1. About Me</h2>
+            <div class="section-title">
+                <i class="fa-solid fa-user"></i> 1. About Me
+            </div>
             <div class="card">
-                <p>Hi, I am a first-year student pursuing my degree at Lovely Professional University. I am passionate about combining life sciences with technology, coding, and problem-solving to build impactful projects.</p>
+                <p>I am a dedicated B.Tech Biotechnology student at Lovely Professional University, deeply passionate about exploring the fundamental principles of life sciences, molecular biology, and biological systems. My focus is on developing a strong academic and practical foundation in biotechnology to contribute to research, biological analysis, and healthcare advancements.</p>
             </div>
         </section>
 
-        <!-- 2. Career Objective / Pathway -->
+        <!-- 2. Career Pathway / Objective -->
         <section>
-            <h2>2. Career Objective / Pathway</h2>
+            <div class="section-title">
+                <i class="fa-solid fa-compass"></i> 2. Career Pathway / Objective
+            </div>
             <div class="card">
-                <p>My goal is to explore Biotechnology deeply while building strong foundations in core life sciences, biological research, and technical systems. I aim to create innovative tech-driven solutions for real-world biological and engineering challenges.</p>
+                <p>My goal is to explore Biotechnology deeply while building strong foundations in core life sciences, biological research, molecular biology, and bio-processing. I aim to build a successful career in life sciences and research to contribute to innovative biological, healthcare, and environmental solutions.</p>
             </div>
         </section>
 
-        <!-- 3. Education Section -->
+        <!-- 3. Education -->
         <section>
-            <h2>3. Education</h2>
-            <div class="card">
-                <ul>
-                    <li><strong>B.Tech in Biotechnology:</strong> Lovely Professional University (2026 – 2030)</li>
-                    <li><strong>Class 12th / High School:</strong> Modern English School, Nawada (Bihar) — 80% marks</li>
-                    <li><strong>Class 10th:</strong> 72.6% marks</li>
-                </ul>
+            <div class="section-title">
+                <i class="fa-solid fa-graduation-cap"></i> 3. Education
             </div>
-        </section>
-
-        <!-- 4. Professional Links Section -->
-        <section>
-            <h2>4. Professional Links</h2>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/shivam-kumar-a03789437?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank">LinkedIn Profile</a>
-                <a href="https://github.com/sk604246282-rgb" target="_blank">GitHub Profile</a>
-            </div>
-        </section>
-
-        <!-- 5. Skills & Future Goals Section -->
-        <section>
-            <h2>5. Skills & Future Goals</h2>
-            <div class="card">
-                <p><strong>Core Skills:</strong></p>
-                <div class="skills-list">
-                    <span class="skill-tag">Python (Basic)</span>
-                    <span class="skill-tag">Java</span>
-                    <span class="skill-tag">Cybersecurity</span>
-                    <span class="skill-tag">Microsoft Word</span>
-                    <span class="skill-tag">Microsoft Excel</span>
-                    <span class="skill-tag">Communication</span>
-                    <span class="skill-tag">Problem Solving</span>
+            <div class="edu-grid">
+                <div class="edu-card">
+                    <h3>B.Tech in Biotechnology</h3>
+                    <div class="inst">Lovely Professional University</div>
+                    <span class="score">2026 – 2030</span>
                 </div>
-                <p style="margin-top: 15px;"><strong>Upcoming Milestones & Goals:</strong></p>
-                <ul>
-                    <li>Complete online certifications in Python programming and Cybersecurity bootcamp.</li>
-                    <li>Build and showcase hardware/IoT automation projects during the first year.</li>
+                <div class="edu-card">
+                    <h3>Class 12th (Senior Secondary)</h3>
+                    <div class="inst">Modern English School, Nawada</div>
+                    <span class="score">80% Marks</span>
+                </div>
+                <div class="edu-card">
+                    <h3>Class 10th (Secondary)</h3>
+                    <div class="inst">Modern English School</div>
+                    <span class="score">72.6% Marks</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Skills, Achievements & Target Internship Domains -->
+        <section>
+            <div class="section-title">
+                <i class="fa-solid fa-code"></i> 4. Skills & Achievements
+            </div>
+            <div class="card">
+                <p style="color: #fff; font-weight: 600; margin-bottom: 12px;">Core Skills:</p>
+                <div class="skills-grid">
+                    <span class="skill-badge"><i class="fa-brands fa-python" style="color:#38bdf8;"></i> Python (Basic)</span>
+                    <span class="skill-badge"><i class="fa-brands fa-java" style="color:#f87171;"></i> Java</span>
+                    <span class="skill-badge"><i class="fa-solid fa-shield-halved" style="color:#34d399;"></i> Cybersecurity</span>
+                    <span class="skill-badge"><i class="fa-regular fa-file-word" style="color:#60a5fa;"></i> Microsoft Word</span>
+                    <span class="skill-badge"><i class="fa-regular fa-file-excel" style="color:#4ade80;"></i> Microsoft Excel</span>
+                    <span class="skill-badge"><i class="fa-solid fa-comments" style="color:#fbbf24;"></i> Communication</span>
+                    <span class="skill-badge"><i class="fa-solid fa-brain" style="color:#c084fc;"></i> Problem Solving</span>
+                </div>
+
+                <p style="color: #fff; font-weight: 600; margin-bottom: 12px; margin-top: 20px;">Key Achievements:</p>
+                <ul class="achievements-list">
+                    <li>Designed and deployed an <strong>IoT-Enabled Automated Fire Detection & Suppression System</strong>.</li>
+                    <li>Built an <strong>Automatic Night Light System</strong> using LDR and Arduino microcontroller.</li>
                 </ul>
+
+                <p style="color: #fff; font-weight: 600; margin-bottom: 12px; margin-top: 20px;">Target Internship Domains:</p>
+                <ul class="domain-list">
+                    <li><strong>Bioprocess & Industrial Biotechnology</strong></li>
+                    <li><strong>Genetic Engineering & Molecular Biology</strong></li>
+                    <li><strong>Bioinformatics & Computational Biology</strong></li>
+                    <li><strong>Data Science & Health-Tech Analytics</strong></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 5. Contact & Reference Section -->
+        <section>
+            <div class="section-title">
+                <i class="fa-solid fa-address-book"></i> 5. Contact & Professional References
+            </div>
+            <div class="card">
+                <div class="contact-grid">
+                    <a href="mailto:your-email@example.com" class="contact-card">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div class="contact-info">
+                            <div class="label">Email</div>
+                            <div class="val">sk604246282@gmail.com</div>
+                        </div>
+                    </a>
+                    <a href="tel:+91XXXXXXXXXX" class="contact-card">
+                        <i class="fa-solid fa-phone"></i>
+                        <div class="contact-info">
+                            <div class="label">Phone</div>
+                            <div class="val">9973075004</div>
+                        </div>
+                    </a>
+                    <a href="https://www.linkedin.com/in/shivam-kumar-a03789437" target="_blank" class="contact-card">
+                        <i class="fa-brands fa-linkedin"></i>
+                        <div class="contact-info">
+                            <div class="label">LinkedIn</div>
+                            <div class="val">Shivam Kumar</div>
+                        </div>
+                    </a>
+                    <a href="https://github.com/sk604246282-rgb" target="_blank" class="contact-card">
+                        <i class="fa-brands fa-github"></i>
+                        <div class="contact-info">
+                            <div class="label">GitHub</div>
+                            <div class="val">sk604246282-rgb</div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="ref-box">
+                    <i class="fa-solid fa-circle-info" style="color: var(--primary);"></i> <strong>Reference Note:</strong> Academic credentials and project references are available upon request through Lovely Professional University.
+                </div>
             </div>
         </section>
 
