@@ -3,24 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shivam Kumar | Biotechnology & Tech Portfolio</title>
-    <!-- Google Fonts & Font Awesome Icons -->
+    <title>Shivam Kumar | Portfolio</title>
+    <!-- Google Fonts & Font Awesome Pro Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
     <style>
         :root {
-            --bg-dark: #06141b;
-            --bg-card: rgba(13, 40, 48, 0.75);
-            --bg-card-hover: rgba(17, 63, 72, 0.85);
-            --border-glow: rgba(16, 185, 129, 0.25);
-            --border-subtle: rgba(255, 255, 255, 0.08);
-            --emerald: #10b981;
-            --emerald-glow: rgba(16, 185, 129, 0.35);
-            --cyan: #06b6d4;
-            --text-heading: #f8fafc;
-            --text-body: #94a3b8;
-            --glass-pill: rgba(255, 255, 255, 0.04);
+            --bg-color: #0b0f19;
+            --card-bg: rgba(23, 31, 48, 0.7);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --primary: #3b82f6;
+            --primary-glow: rgba(59, 130, 246, 0.35);
+            --accent: #06b6d4;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --glass-bg: rgba(255, 255, 255, 0.03);
         }
 
         * {
@@ -31,567 +28,450 @@
         }
 
         body {
-            background-color: var(--bg-dark);
-            color: var(--text-heading);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            background-image: 
-                radial-gradient(circle at 15% 15%, rgba(16, 185, 129, 0.12) 0%, transparent 45%),
-                radial-gradient(circle at 85% 85%, rgba(6, 182, 212, 0.12) 0%, transparent 45%);
-            background-attachment: fixed;
+            background-color: var(--bg-color);
+            color: var(--text-main);
             line-height: 1.6;
+            min-height: 100vh;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.12) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(6, 182, 212, 0.12) 0%, transparent 40%);
+            background-attachment: fixed;
+            padding: 40px 20px;
         }
 
-        /* Top Navigation Bar */
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: rgba(6, 20, 27, 0.85);
-            backdrop-filter: blur(16px);
-            border-bottom: 1px solid var(--border-subtle);
-            padding: 15px 20px;
-        }
-
-        .nav-container {
-            max-width: 1000px;
+        .container {
+            max-width: 900px;
             margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
         }
 
-        .brand-logo {
-            font-weight: 800;
-            font-size: 1.25rem;
-            background: linear-gradient(135deg, #ffffff, var(--emerald));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .brand-logo i {
-            color: var(--emerald);
-            -webkit-text-fill-color: initial;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 8px;
-            list-style: none;
-        }
-
-        .nav-btn {
-            background: transparent;
-            border: 1px solid transparent;
-            color: var(--text-body);
-            padding: 8px 16px;
-            border-radius: 10px;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .nav-btn:hover {
-            color: var(--text-heading);
-            background: rgba(255, 255, 255, 0.05);
-        }
-
-        .nav-btn.active {
-            color: #ffffff;
-            background: rgba(16, 185, 129, 0.15);
-            border-color: var(--emerald-glow);
-            box-shadow: 0 0 15px rgba(16, 185, 129, 0.2);
-        }
-
-        /* Container & Page Views */
-        .main-content {
-            max-width: 1000px;
-            margin: 30px auto;
-            padding: 0 20px;
-            flex: 1;
-            width: 100%;
-        }
-
-        .page-view {
-            display: none;
-            animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-
-        .page-view.active {
-            display: block;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(12px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Cards & Section Styling */
-        .hero-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-glow);
-            border-radius: 24px;
-            padding: 40px;
-            backdrop-filter: blur(12px);
+        /* Profile Header */
+        header {
             text-align: center;
+            padding: 40px 20px;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            backdrop-filter: blur(12px);
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
             position: relative;
             overflow: hidden;
-            margin-bottom: 25px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
         }
 
-        .hero-card::before {
+        header::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 4px;
-            background: linear-gradient(90deg, var(--emerald), var(--cyan));
+            background: linear-gradient(90deg, var(--primary), var(--accent));
         }
 
-        .avatar-box {
-            width: 130px;
-            height: 130px;
+        .profile-wrapper {
+            position: relative;
+            width: 140px;
+            height: 140px;
             margin: 0 auto 20px;
-            border-radius: 50%;
-            padding: 4px;
-            background: linear-gradient(135deg, var(--emerald), var(--cyan));
-            box-shadow: 0 0 30px var(--emerald-glow);
         }
 
-        .avatar-img {
+        .profile-img {
             width: 100%;
             height: 100%;
             border-radius: 50%;
             object-fit: cover;
-            background-color: var(--bg-dark);
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 25px var(--primary-glow);
+            transition: transform 0.3s ease;
         }
 
-        .hero-card h1 {
-            font-size: 2.2rem;
+        .profile-wrapper:hover .profile-img {
+            transform: scale(1.03);
+        }
+
+        header h1 {
+            font-size: 2.4rem;
             font-weight: 800;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             margin-bottom: 6px;
         }
 
-        .hero-card .tagline {
-            color: var(--cyan);
-            font-weight: 600;
+        header p {
             font-size: 1.1rem;
-            margin-bottom: 16px;
-        }
-
-        .hero-card .bio {
-            color: var(--text-body);
-            max-width: 700px;
-            margin: 0 auto 25px;
-            font-size: 0.98rem;
-        }
-
-        .cta-group {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-
-        .btn-primary, .btn-secondary {
-            padding: 10px 22px;
-            border-radius: 12px;
+            color: var(--accent);
             font-weight: 600;
-            font-size: 0.9rem;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.25s ease;
+            letter-spacing: 0.5px;
         }
 
-        .btn-primary {
-            background: linear-gradient(135deg, var(--emerald), #059669);
-            color: #fff;
-            border: none;
-            box-shadow: 0 4px 15px var(--emerald-glow);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.5);
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--text-heading);
-            border: 1px solid var(--border-subtle);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.2);
-            transform: translateY(-2px);
-        }
-
-        .card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
-            border-radius: 20px;
-            padding: 28px;
-            backdrop-filter: blur(12px);
+        /* Section Layout */
+        section {
             margin-bottom: 25px;
         }
 
-        .section-header {
-            font-size: 1.3rem;
+        .section-title {
+            font-size: 1.25rem;
             font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
+            color: #ffffff;
             display: flex;
             align-items: center;
             gap: 12px;
         }
 
-        .header-icon {
-            width: 38px;
-            height: 38px;
+        .section-title-icon {
+            width: 36px;
+            height: 36px;
             border-radius: 10px;
-            background: rgba(16, 185, 129, 0.15);
-            border: 1px solid var(--emerald-glow);
+            background: rgba(59, 130, 246, 0.15);
+            border: 1px solid rgba(59, 130, 246, 0.3);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--emerald);
+            color: var(--primary);
+            font-size: 1.1rem;
+            box-shadow: 0 0 10px var(--primary-glow);
         }
 
-        /* Timeline / Education */
-        .timeline {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 24px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
-        .timeline-item {
-            background: var(--glass-pill);
-            border: 1px solid var(--border-subtle);
-            border-radius: 16px;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.98rem;
+            line-height: 1.7;
+        }
+
+        /* Education Grid */
+        .edu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 15px;
-            transition: all 0.25s ease;
         }
 
-        .timeline-item:hover {
-            background: var(--bg-card-hover);
-            border-color: var(--emerald-glow);
+        .edu-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--card-border);
+            padding: 18px;
+            border-radius: 14px;
+            position: relative;
         }
 
-        .timeline-info h3 {
-            font-size: 1.05rem;
+        .edu-card h3 {
+            font-size: 1rem;
             color: #fff;
             margin-bottom: 4px;
-        }
-
-        .timeline-info p {
-            color: var(--text-body);
-            font-size: 0.9rem;
-        }
-
-        .badge-pill {
-            background: rgba(16, 185, 129, 0.12);
-            color: var(--emerald);
-            border: 1px solid rgba(16, 185, 129, 0.25);
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.82rem;
-            font-weight: 600;
-            white-space: nowrap;
-        }
-
-        /* Projects Grid */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
-        .project-card {
-            background: var(--glass-pill);
-            border: 1px solid var(--border-subtle);
-            border-radius: 18px;
-            padding: 22px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: all 0.3s ease;
-        }
-
-        .project-card:hover {
-            border-color: var(--emerald-glow);
-            transform: translateY(-4px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-        }
-
-        .project-title {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #fff;
-            margin-bottom: 10px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
 
-        .project-title i {
-            color: var(--cyan);
-        }
-
-        .project-desc {
-            color: var(--text-body);
+        .edu-card h3 i {
+            color: var(--accent);
             font-size: 0.9rem;
-            margin-bottom: 16px;
         }
 
-        .tech-tags {
-            display: flex;
-            flex-wrap: wrap;
+        .edu-card .inst {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+        }
+
+        .edu-card .score {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #4ade80;
+            background: rgba(74, 222, 128, 0.1);
+            padding: 3px 10px;
+            border-radius: 6px;
+            display: inline-flex;
+            align-items: center;
             gap: 6px;
         }
 
-        .tag {
-            background: rgba(255, 255, 255, 0.05);
-            color: #cbd5e1;
-            font-size: 0.75rem;
-            padding: 3px 10px;
-            border-radius: 6px;
-        }
-
-        /* Skills Filterable Badges */
-        .filter-bar {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-
-        .filter-btn {
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid var(--border-subtle);
-            color: var(--text-body);
-            padding: 6px 14px;
-            border-radius: 8px;
-            font-size: 0.85rem;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .filter-btn.active {
-            background: var(--cyan);
-            color: #000;
-            font-weight: 600;
-            border-color: var(--cyan);
-        }
-
+        /* Skills Badges */
         .skills-grid {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
+            margin-bottom: 20px;
         }
 
         .skill-badge {
-            background: var(--glass-pill);
-            border: 1px solid var(--border-subtle);
-            padding: 10px 16px;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-main);
+            border: 1px solid var(--card-border);
+            padding: 8px 16px;
             border-radius: 12px;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
+            font-weight: 500;
             display: flex;
             align-items: center;
             gap: 10px;
-            transition: all 0.25s ease;
+            transition: all 0.2s ease;
+        }
+
+        .skill-badge i {
+            font-size: 1.05rem;
         }
 
         .skill-badge:hover {
-            border-color: var(--emerald);
-            background: rgba(16, 185, 129, 0.1);
+            border-color: var(--primary);
+            box-shadow: 0 0 12px var(--primary-glow);
             transform: translateY(-2px);
         }
 
-        /* Contact Section */
+        .domain-list, .achievements-list {
+            list-style: none;
+        }
+
+        .domain-list li, .achievements-list li {
+            position: relative;
+            padding-left: 32px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+
+        .achievements-list li::before {
+            content: "\f135";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: #f59e0b;
+            font-size: 1rem;
+        }
+
+        .domain-list li::before {
+            content: "\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-size: 0.9rem;
+        }
+
+        /* Footer / Contact Section */
         .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 15px;
+            margin-top: 15px;
         }
 
         .contact-card {
-            background: var(--glass-pill);
-            border: 1px solid var(--border-subtle);
-            padding: 18px;
+            background: var(--glass-bg);
+            border: 1px solid var(--card-border);
+            padding: 16px;
             border-radius: 14px;
-            text-decoration: none;
-            color: var(--text-heading);
             display: flex;
             align-items: center;
-            gap: 15px;
-            transition: all 0.25s ease;
+            gap: 14px;
+            text-decoration: none;
+            color: var(--text-main);
+            transition: all 0.2s ease;
         }
 
         .contact-card:hover {
-            border-color: var(--cyan);
-            background: rgba(6, 182, 212, 0.1);
+            background: rgba(59, 130, 246, 0.15);
+            border-color: var(--primary);
             transform: translateY(-2px);
         }
 
-        .contact-icon {
-            width: 42px;
-            height: 42px;
+        .contact-card-icon {
+            width: 40px;
+            height: 40px;
             border-radius: 10px;
             background: rgba(255, 255, 255, 0.05);
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.2rem;
-            color: var(--cyan);
+            color: var(--primary);
         }
 
-        /* Footer */
+        .contact-info .label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .contact-info .val {
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .ref-box {
+            margin-top: 18px;
+            padding-top: 15px;
+            border-top: 1px dashed var(--card-border);
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .ref-box i {
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
         footer {
             text-align: center;
-            padding: 30px;
-            color: var(--text-body);
+            padding: 25px 0;
+            color: var(--text-muted);
             font-size: 0.85rem;
-            border-top: 1px solid var(--border-subtle);
-            margin-top: auto;
+            border-top: 1px solid var(--card-border);
+            margin-top: 40px;
         }
 
-        @media (max-width: 650px) {
-            .nav-container { flex-direction: column; gap: 12px; }
-            .hero-card { padding: 25px 18px; }
-            .timeline-item { flex-direction: column; align-items: flex-start; }
-            .badge-pill { align-self: flex-start; }
+        @media (max-width: 600px) {
+            body { padding: 20px 12px; }
+            header h1 { font-size: 1.8rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Top Navigation Bar -->
-    <nav>
-        <div class="nav-container">
-            <div class="brand-logo">
-                <i class="fa-solid fa-dna"></i> Shivam Kumar
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="profile-wrapper">
+                <img src="photo.jpg.png" alt="Shivam Kumar" class="profile-img">
             </div>
-            <ul class="nav-links">
-                <li><button class="nav-btn active" onclick="switchPage('home')"><i class="fa-solid fa-house"></i> Overview</button></li>
-                <li><button class="nav-btn" onclick="switchPage('edu-projects')"><i class="fa-solid fa-graduation-cap"></i> Academics & Projects</button></li>
-                <li><button class="nav-btn" onclick="switchPage('skills-contact')"><i class="fa-solid fa-layer-group"></i> Skills & Contact</button></li>
-            </ul>
-        </div>
-    </nav>
+            <h1>Shivam Kumar</h1>
+            <p>B.Tech Biotechnology Student</p>
+        </header>
 
-    <!-- Main Content Container -->
-    <main class="main-content">
-
-        <!-- PAGE 1: OVERVIEW / HOME -->
-        <div id="page-home" class="page-view active">
-            <div class="hero-card">
-                <div class="avatar-box">
-                    <img src="photo.jpg.png" alt="Shivam Kumar" class="avatar-img" onerror="this.src='https://ui-avatars.com/api/?name=Shivam+Kumar&background=0d2830&color=10b981&size=128'">
-                </div>
-                <h1>Shivam Kumar</h1>
-                <p class="tagline">B.Tech Biotechnology Student @ LPU</p>
-                <p class="bio">
-                    Deeply passionate about exploring molecular biology, bioprocess engineering, and technological advancements in life sciences. Dedicated to bridging core biological research with modern computational tools.
-                </p>
-                <div class="cta-group">
-                    <button class="btn-primary" onclick="switchPage('edu-projects')"><i class="fa-solid fa-briefcase"></i> View Projects</button>
-                    <button class="btn-secondary" onclick="switchPage('skills-contact')"><i class="fa-solid fa-paper-plane"></i> Contact Me</button>
-                </div>
+        <!-- 1. About Me -->
+        <section>
+            <div class="section-title">
+                <div class="section-title-icon"><i class="fa-solid fa-user-astronaut"></i></div>
+                <span>1. About Me</span>
             </div>
-
             <div class="card">
-                <div class="section-header">
-                    <div class="header-icon"><i class="fa-solid fa-compass"></i></div>
-                    <span>Career Pathway & Objective</span>
-                </div>
-                <p style="color: var(--text-body); font-size: 0.98rem;">
-                    My objective is to gain deep expertise in biotechnology while building solid foundations in modern computing, bioinformatics, molecular biology, and bioprocessing. I aim to contribute to cutting-edge research, healthcare innovations, and environmental solutions through multi-disciplinary techniques.
-                </p>
+                <p>I am a dedicated B.Tech Biotechnology student at Lovely Professional University, deeply passionate about exploring the fundamental principles of life sciences, molecular biology, and biological systems. My focus is on developing a strong academic and practical foundation in biotechnology to contribute to research, biological analysis, and healthcare advancements.</p>
             </div>
+        </section>
 
-            <div class="card">
-                <div class="section-header">
-                    <div class="header-icon"><i class="fa-solid fa-crosshairs"></i></div>
-                    <span>Target Internship Domains</span>
-                </div>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-title"><i class="fa-solid fa-flask"></i> Bioprocess Tech</div>
-                        <div class="project-desc">Industrial fermentation, scale-up dynamics, and biosepation techniques.</div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-title"><i class="fa-solid fa-dna"></i> Genetic Engineering</div>
-                        <div class="project-desc">Recombinant DNA techniques, gene splicing, and molecular biological testing.</div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-title"><i class="fa-solid fa-microchip"></i> Computational Biology</div>
-                        <div class="project-desc">Bioinformatics data processing, sequence analysis, and biological data modeling.</div>
-                    </div>
-                </div>
+        <!-- 2. Career Pathway / Objective -->
+        <section>
+            <div class="section-title">
+                <div class="section-title-icon"><i class="fa-solid fa-bullseye"></i></div>
+                <span>2. Career Pathway / Objective</span>
             </div>
-        </div>
-
-        <!-- PAGE 2: ACADEMICS & PROJECTS -->
-        <div id="page-edu-projects" class="page-view">
             <div class="card">
-                <div class="section-header">
-                    <div class="header-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-                    <span>Educational Background</span>
+                <p>My goal is to explore Biotechnology deeply while building strong foundations in core life sciences, biological research, molecular biology, and bio-processing. I aim to build a successful career in life sciences and research to contribute to innovative biological, healthcare, and environmental solutions.</p>
+            </div>
+        </section>
+
+        <!-- 3. Education -->
+        <section>
+            <div class="section-title">
+                <div class="section-title-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                <span>3. Education</span>
+            </div>
+            <div class="edu-grid">
+                <div class="edu-card">
+                    <h3><i class="fa-solid fa-dna"></i> B.Tech in Biotechnology</h3>
+                    <div class="inst">Lovely Professional University</div>
+                    <span class="score"><i class="fa-regular fa-calendar-check"></i> 2026 – 2030</span>
                 </div>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-info">
-                            <h3>B.Tech in Biotechnology</h3>
-                            <p>Lovely Professional University (LPU), Punjab</p>
-                        </div>
-                        <span class="badge-pill"><i class="fa-regular fa-calendar"></i> 2026 – 2030</span>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-info">
-                            <h3>Class 12th (Senior Secondary)</h3>
-                            <p>Utkramit Uchch Madhyamik Vidyalay, Bihar</p>
-                        </div>
-                        <span class="badge-pill"><i class="fa-solid fa-award"></i> 80.0% Marks</span>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-info">
-                            <h3>Class 10th (Secondary)</h3>
-                            <p>Modern English School, Bihar</p>
-                        </div>
-                        <span class="badge-pill"><i class="fa-solid fa-award"></i> 72.6% Marks</span>
-                    </div>
+                <div class="edu-card">
+                    <h3><i class="fa-solid fa-microscope"></i> Class 12th (Senior Sec.)</h3>
+                    <div class="inst">Utkramit Uchch Madhyamik Vidyalay, Bihar</div>
+                    <span class="score"><i class="fa-solid fa-award"></i> 80% Marks</span>
+                </div>
+                <div class="edu-card">
+                    <h3><i class="fa-solid fa-school"></i> Class 10th (Secondary)</h3>
+                    <div class="inst">Modern English School, Bihar</div>
+                    <span class="score"><i class="fa-solid fa-award"></i> 72.6% Marks</span>
                 </div>
             </div>
+        </section>
 
+        <!-- 4. Skills, Achievements & Target Internship Domains -->
+        <section>
+            <div class="section-title">
+                <div class="section-title-icon"><i class="fa-solid fa-layer-group"></i></div>
+                <span>4. Skills & Achievements</span>
+            </div>
             <div class="card">
-                <div class="section-header">
-                    <div class="header-icon"><i class="fa-solid fa-diagram-project"></i></div>
-                    <span>Key Projects & Achievements</span>
+                <p style="color: #fff; font-weight: 600; margin-bottom: 12px;">Core Skills:</p>
+                <div class="skills-grid">
+                    <span class="skill-badge"><i class="fa-brands fa-python" style="color:#38bdf8;"></i> Python (Basic)</span>
+                    <span class="skill-badge"><i class="fa-brands fa-java" style="color:#f87171;"></i> Java</span>
+                    <span class="skill-badge"><i class="fa-solid fa-user-shield" style="color:#34d399;"></i> Cybersecurity</span>
+                    <span class="skill-badge"><i class="fa-solid fa-file-word" style="color:#60a5fa;"></i> Microsoft Word</span>
+                    <span class="skill-badge"><i class="fa-solid fa-file-excel" style="color:#4ade80;"></i> Microsoft Excel</span>
+                    <span class="skill-badge"><i class="fa-solid fa-comments-dollar" style="color:#fbbf24;"></i> Communication</span>
+                    <span class="skill-badge"><i class="fa-solid fa-brain" style="color:#c084fc;"></i> Problem Solving</span>
                 </div>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <div>
-                            <div class="project-title"><i class="fa-solid fa-fire-extinguisher"></i> Automated Fire Suppression</div>
-                            <p class="project-desc">Designed and deployed an IoT-enabled automated fire detection and suppression hardware prototype utilizing gas sensors and relay controllers.</p>
+
+                <p style="color: #fff; font-weight: 600; margin-bottom: 12px; margin-top: 20px;">Key Achievements:</p>
+                <ul class="achievements-list">
+                    <li>Designed and deployed an <strong>IoT-Enabled Automated Fire Detection & Suppression System</strong>.</li>
+                    <li>Built an <strong>Automatic Night Light System</strong> using LDR and Arduino microcontroller.</li>
+                </ul>
+
+                <p style="color: #fff; font-weight: 600; margin-bottom: 12px; margin-top: 20px;">Target Internship Domains:</p>
+                <ul class="domain-list">
+                    <li><strong>Bioprocess & Industrial Biotechnology</strong></li>
+                    <li><strong>Genetic Engineering & Molecular Biology</strong></li>
+                    <li><strong>Bioinformatics & Computational Biology</strong></li>
+                    <li><strong>Data Science & Health-Tech Analytics</strong></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 5. Contact & Reference Section -->
+        <section>
+            <div class="section-title">
+                <div class="section-title-icon"><i class="fa-solid fa-address-card"></i></div>
+                <span>5. Contact & Professional References</span>
+            </div>
+            <div class="card">
+                <div class="contact-grid">
+                    <a href="mailto:sk604246282@gmail.com" class="contact-card">
+                        <div class="contact-card-icon"><i class="fa-solid fa-paper-plane" style="color:#38bdf8;"></i></div>
+                        <div class="contact-info">
+                            <div class="label">Email</div>
+                            <div class="val">sk604246282@gmail.com</div>
                         </div>
-                        <div class="tech-tags">
-                            <span class="tag">IoT</span>
-                            <span class="tag">Sensors</span>
-                            <span class="tag">Embedded</span>
- 
+                    </a>
+                    <a href="tel:+919973075004" class="contact-card">
+                        <div class="contact-card-icon"><i class="fa-solid fa-headset" style="color:#4ade80;"></i></div>
+                        <div class="contact-info">
+                            <div class="label">Phone</div>
+                            <div class="val">+91 9973075004</div>
+                        </div>
+                    </a>
+                    <a href="https://www.linkedin.com/in/shivam-kumar-a03789437" target="_blank" class="contact-card">
+                        <div class="contact-card-icon"><i class="fa-brands fa-linkedin-in" style="color:#0a66c2;"></i></div>
+                        <div class="contact-info">
+                            <div class="label">LinkedIn</div>
+                            <div class="val">Shivam Kumar</div>
+                        </div>
+                    </a>
+                    <a href="https://github.com/sk604246282-rgb" target="_blank" class="contact-card">
+    <div class="contact-card-icon"><i class="fa-brands fa-github-alt" style="color:#f3f4f6;"></i></div>
+    <div class="contact-info">
+        <div class="label">GitHub</div>
+        <div class="val">sk604246282-rgb</div>
+    </div>
+                    </a>
+                    
