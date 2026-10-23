@@ -1,477 +1,575 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shivam Kumar | Portfolio</title>
-    <!-- Google Fonts & Font Awesome Pro Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        :root {
-            --bg-color: #0b0f19;
-            --card-bg: rgba(23, 31, 48, 0.7);
-            --card-border: rgba(255, 255, 255, 0.08);
-            --primary: #3b82f6;
-            --primary-glow: rgba(59, 130, 246, 0.35);
-            --accent: #06b6d4;
-            --text-main: #f3f4f6;
-            --text-muted: #9ca3af;
-            --glass-bg: rgba(255, 255, 255, 0.03);
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shivam Kumar | Portfolio</title>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
-            min-height: 100vh;
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.12) 0%, transparent 40%),
-                radial-gradient(circle at 90% 80%, rgba(6, 182, 212, 0.12) 0%, transparent 40%);
-            background-attachment: fixed;
-            padding: 40px 20px;
-        }
+<style>
+:root {
+  --bg: #03090b;
+  --panel: #071519;
+  --teal: #22d3c5;
+  --mint: #83f5dc;
+  --text: #e8f5f3;
+  --muted: #9db8b6;
+  --line: #16433f;
+}
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-        /* Profile Header */
-        header {
-            text-align: center;
-            padding: 40px 20px;
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 24px;
-            backdrop-filter: blur(12px);
-            margin-bottom: 30px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
+html {
+  scroll-behavior: smooth;
+}
 
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary), var(--accent));
-        }
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  padding: 25px 14px;
+  background-image:
+    radial-gradient(ellipse at 15% 0%, #07313766, transparent 38%),
+    radial-gradient(ellipse at 90% 65%, #073a3450, transparent 35%);
+}
 
-        .profile-wrapper {
-            position: relative;
-            width: 140px;
-            height: 140px;
-            margin: 0 auto 20px;
-        }
+.container {
+  width: min(900px, 100%);
+  margin: auto;
+}
 
-        .profile-img {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 0 25px var(--primary-glow);
-            transition: transform 0.3s ease;
-        }
+.card {
+  background: linear-gradient(145deg, #0a1d21, #061114);
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  padding: 24px;
+  margin-bottom: 22px;
+}
 
-        .profile-wrapper:hover .profile-img {
-            transform: scale(1.03);
-        }
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 140px;
+  align-items: center;
+  gap: 25px;
+  background: linear-gradient(125deg, #0a282d, #061114);
+  border: 1px solid #17625a;
+  border-radius: 16px;
+  padding: 28px;
+  margin-bottom: 25px;
+}
 
-        header h1 {
-            font-size: 2.4rem;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 6px;
-        }
+.eyebrow {
+  color: var(--teal);
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
 
-        header p {
-            font-size: 1.1rem;
-            color: var(--accent);
-            font-weight: 600;
-            letter-spacing: 0.5px;
-        }
+h1 {
+  font-size: clamp(32px, 6vw, 48px);
+  line-height: 1.2;
+  margin: 8px 0;
+}
 
-        /* Section Layout */
-        section {
-            margin-bottom: 25px;
-        }
+h1 span {
+  color: var(--teal);
+}
 
-        .section-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 16px;
-            color: #ffffff;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
+.role {
+  color: var(--mint);
+  font-weight: 600;
+}
 
-        .section-title-icon {
-            width: 36px;
-            height: 36px;
-            border-radius: 10px;
-            background: rgba(59, 130, 246, 0.15);
-            border: 1px solid rgba(59, 130, 246, 0.3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary);
-            font-size: 1.1rem;
-            box-shadow: 0 0 10px var(--primary-glow);
-        }
+.hero p {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 12px;
+}
 
-        .card {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 20px;
-            padding: 24px;
-            backdrop-filter: blur(12px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
+.avatar {
+  width: 130px;
+  height: 130px;
+  border: 2px solid var(--teal);
+  border-radius: 50%;
+  overflow: hidden;
+  background: #0d2b2d;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 0 25px #13bca633;
+}
 
-        .card p {
-            color: var(--text-muted);
-            font-size: 0.98rem;
-            line-height: 1.7;
-        }
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-        /* Education Grid */
-        .edu-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-        }
+.section {
+  margin-bottom: 24px;
+}
 
-        .edu-card {
-            background: var(--glass-bg);
-            border: 1px solid var(--card-border);
-            padding: 18px;
-            border-radius: 14px;
-            position: relative;
-        }
+.section-title {
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #16645d;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
 
-        .edu-card h3 {
-            font-size: 1rem;
-            color: #fff;
-            margin-bottom: 4px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
+.section-title span {
+  color: var(--teal);
+  margin-right: 9px;
+}
 
-        .edu-card h3 i {
-            color: var(--accent);
-            font-size: 0.9rem;
-        }
+.summary {
+  color: #b5cdca;
+  background: #07191c;
+  border-left: 3px solid var(--teal);
+  border-radius: 8px;
+  padding: 17px;
+  font-size: 13px;
+}
 
-        .edu-card .inst {
-            font-size: 0.88rem;
-            color: var(--text-muted);
-            margin-bottom: 10px;
-        }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
 
-        .edu-card .score {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: #4ade80;
-            background: rgba(74, 222, 128, 0.1);
-            padding: 3px 10px;
-            border-radius: 6px;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
+.mini-card {
+  background: linear-gradient(145deg, #0a1d21, #061114);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 17px;
+  min-width: 0;
+}
 
-        /* Skills Badges */
-        .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
+.mini-card h3 {
+  font-size: 13px;
+  margin-bottom: 7px;
+  color: #effffb;
+}
 
-        .skill-badge {
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--text-main);
-            border: 1px solid var(--card-border);
-            padding: 8px 16px;
-            border-radius: 12px;
-            font-size: 0.88rem;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            transition: all 0.2s ease;
-        }
+.mini-card p {
+  font-size: 12px;
+  color: var(--muted);
+}
 
-        .skill-badge i {
-            font-size: 1.05rem;
-        }
+.sub {
+  font-size: 11px;
+  color: var(--muted);
+}
 
-        .skill-badge:hover {
-            border-color: var(--primary);
-            box-shadow: 0 0 12px var(--primary-glow);
-            transform: translateY(-2px);
-        }
+.tag {
+  display: inline-block;
+  background: #10372f;
+  color: #a8f4d9;
+  border: 1px solid #1c6757;
+  border-radius: 5px;
+  padding: 4px 8px;
+  font-size: 10px;
+  margin: 5px 4px 0 0;
+}
 
-        .domain-list, .achievements-list {
-            list-style: none;
-        }
+.skill {
+  margin: 15px 0;
+}
 
-        .domain-list li, .achievements-list li {
-            position: relative;
-            padding-left: 32px;
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-        }
+.skill-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 12px;
+  margin-bottom: 7px;
+  color: #d9eeeb;
+}
 
-        .achievements-list li::before {
-            content: "\f135";
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
-            position: absolute;
-            left: 0;
-            color: #f59e0b;
-            font-size: 1rem;
-        }
+.skill-top span:last-child {
+  color: var(--teal);
+  font-weight: 700;
+}
 
-        .domain-list li::before {
-            content: "\f00c";
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-            font-size: 0.9rem;
-        }
+.bar {
+  height: 6px;
+  background: #183438;
+  border-radius: 10px;
+  overflow: hidden;
+}
 
-        /* Footer / Contact Section */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 15px;
-        }
+.bar span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #138e83, var(--teal));
+  border-radius: 10px;
+}
 
-        .contact-card {
-            background: var(--glass-bg);
-            border: 1px solid var(--card-border);
-            padding: 16px;
-            border-radius: 14px;
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            text-decoration: none;
-            color: var(--text-main);
-            transition: all 0.2s ease;
-        }
+.project {
+  background: #08191c;
+  border: 1px solid #1b5b53;
+  border-radius: 10px;
+  padding: 18px;
+  margin-bottom: 12px;
+}
 
-        .contact-card:hover {
-            background: rgba(59, 130, 246, 0.15);
-            border-color: var(--primary);
-            transform: translateY(-2px);
-        }
+.project h3 {
+  font-size: 13px;
+  margin-bottom: 7px;
+}
 
-        .contact-card-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 10px;
-            background: rgba(255, 255, 255, 0.05);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            color: var(--primary);
-        }
+.project p {
+  color: var(--muted);
+  font-size: 12px;
+}
 
-        .contact-info .label {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
 
-        .contact-info .val {
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
+.contact {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  color: var(--text);
+  background: #07191c;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  transition: 0.2s;
+}
 
-        .ref-box {
-            margin-top: 18px;
-            padding-top: 15px;
-            border-top: 1px dashed var(--card-border);
-            font-size: 0.88rem;
-            color: var(--text-muted);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+.contact:hover {
+  border-color: var(--teal);
+  transform: translateY(-2px);
+}
 
-        .ref-box i {
-            color: var(--primary);
-            font-size: 1.1rem;
-        }
+.contact i {
+  color: var(--teal);
+  font-size: 18px;
+  min-width: 20px;
+}
 
-        footer {
-            text-align: center;
-            padding: 25px 0;
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            border-top: 1px solid var(--card-border);
-            margin-top: 40px;
-        }
+.contact small {
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+  text-transform: uppercase;
+}
 
-        @media (max-width: 600px) {
-            body { padding: 20px 12px; }
-            header h1 { font-size: 1.8rem; }
-        }
-    </style>
+.contact strong {
+  font-size: 11px;
+}
+
+footer {
+  text-align: center;
+  color: #668b87;
+  font-size: 11px;
+  padding: 20px 0;
+  border-top: 1px solid var(--line);
+}
+
+@media (max-width: 560px) {
+  body {
+    padding: 12px 8px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .avatar {
+    grid-row: 1;
+    width: 90px;
+    height: 90px;
+  }
+
+  .grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 17px;
+  }
+}
+</style>
 </head>
+
 <body>
+<main class="container">
 
-    <div class="container">
-        <!-- Header -->
-        <header>
-            <div class="profile-wrapper">
-                <img src="photo.jpg.png" alt="Shivam Kumar" class="profile-img">
-            </div>
-            <h1>Shivam Kumar</h1>
-            <p>B.Tech Biotechnology Student</p>
-        </header>
-
-        <!-- 1. About Me -->
-        <section>
-            <div class="section-title">
-                <div class="section-title-icon"><i class="fa-solid fa-user-astronaut"></i></div>
-                <span>1. About Me</span>
-            </div>
-            <div class="card">
-                <p>I am a dedicated B.Tech Biotechnology student at Lovely Professional University, deeply passionate about exploring the fundamental principles of life sciences, molecular biology, and biological systems. My focus is on developing a strong academic and practical foundation in biotechnology to contribute to research, biological analysis, and healthcare advancements.</p>
-            </div>
-        </section>
-
-        <!-- 2. Career Pathway / Objective -->
-        <section>
-            <div class="section-title">
-                <div class="section-title-icon"><i class="fa-solid fa-bullseye"></i></div>
-                <span>2. Career Pathway / Objective</span>
-            </div>
-            <div class="card">
-                <p>My goal is to explore Biotechnology deeply while building strong foundations in core life sciences, biological research, molecular biology, and bio-processing. I aim to build a successful career in life sciences and research to contribute to innovative biological, healthcare, and environmental solutions.</p>
-            </div>
-        </section>
-
-        <!-- 3. Education -->
-        <section>
-            <div class="section-title">
-                <div class="section-title-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-                <span>3. Education</span>
-            </div>
-            <div class="edu-grid">
-                <div class="edu-card">
-                    <h3><i class="fa-solid fa-dna"></i> B.Tech in Biotechnology</h3>
-                    <div class="inst">Lovely Professional University</div>
-                    <span class="score"><i class="fa-regular fa-calendar-check"></i> 2026 – 2030</span>
-                </div>
-                <div class="edu-card">
-                    <h3><i class="fa-solid fa-microscope"></i> Class 12th (Senior Sec.)</h3>
-                    <div class="inst">Utkramit Uchch Madhyamik Vidyalay, Bihar</div>
-                    <span class="score"><i class="fa-solid fa-award"></i> 80% Marks</span>
-                </div>
-                <div class="edu-card">
-                    <h3><i class="fa-solid fa-school"></i> Class 10th (Secondary)</h3>
-                    <div class="inst">Modern English School, Bihar</div>
-                    <span class="score"><i class="fa-solid fa-award"></i> 72.6% Marks</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- 4. Skills, Achievements & Target Internship Domains -->
-        <section>
-            <div class="section-title">
-                <div class="section-title-icon"><i class="fa-solid fa-layer-group"></i></div>
-                <span>4. Skills & Achievements</span>
-            </div>
-            <div class="card">
-                <p style="color: #fff; font-weight: 600; margin-bottom: 12px;">Core Skills:</p>
-                <div class="skills-grid">
-                    <span class="skill-badge"><i class="fa-brands fa-python" style="color:#38bdf8;"></i> Python (Basic)</span>
-                    <span class="skill-badge"><i class="fa-brands fa-java" style="color:#f87171;"></i> Java</span>
-                    <span class="skill-badge"><i class="fa-solid fa-user-shield" style="color:#34d399;"></i> Cybersecurity</span>
-                    <span class="skill-badge"><i class="fa-solid fa-file-word" style="color:#60a5fa;"></i> Microsoft Word</span>
-                    <span class="skill-badge"><i class="fa-solid fa-file-excel" style="color:#4ade80;"></i> Microsoft Excel</span>
-                    <span class="skill-badge"><i class="fa-solid fa-comments-dollar" style="color:#fbbf24;"></i> Communication</span>
-                    <span class="skill-badge"><i class="fa-solid fa-brain" style="color:#c084fc;"></i> Problem Solving</span>
-                </div>
-
-                <p style="color: #fff; font-weight: 600; margin-bottom: 12px; margin-top: 20px;">Key Achievements:</p>
-                <ul class="achievements-list">
-                    <li>Designed and deployed an <strong>IoT-Enabled Automated Fire Detection & Suppression System</strong>.</li>
-                    <li>Built an <strong>Automatic Night Light System</strong> using LDR and Arduino microcontroller.</li>
-                </ul>
-
-                <p style="color: #fff; font-weight: 600; margin-bottom: 12px; margin-top: 20px;">Target Internship Domains:</p>
-                <ul class="domain-list">
-                    <li><strong>Bioprocess & Industrial Biotechnology</strong></li>
-                    <li><strong>Genetic Engineering & Molecular Biology</strong></li>
-                    <li><strong>Bioinformatics & Computational Biology</strong></li>
-                    <li><strong>Data Science & Health-Tech Analytics</strong></li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- 5. Contact & Reference Section -->
-        <section>
-            <div class="section-title">
-                <div class="section-title-icon"><i class="fa-solid fa-address-card"></i></div>
-                <span>5. Contact & Professional References</span>
-            </div>
-            <div class="card">
-                <div class="contact-grid">
-                    <a href="mailto:sk604246282@gmail.com" class="contact-card">
-                        <div class="contact-card-icon"><i class="fa-solid fa-paper-plane" style="color:#38bdf8;"></i></div>
-                        <div class="contact-info">
-                            <div class="label">Email</div>
-                            <div class="val">sk604246282@gmail.com</div>
-                        </div>
-                    </a>
-                    <a href="tel:+919973075004" class="contact-card">
-                        <div class="contact-card-icon"><i class="fa-solid fa-headset" style="color:#4ade80;"></i></div>
-                        <div class="contact-info">
-                            <div class="label">Phone</div>
-                            <div class="val">+91 9973075004</div>
-                        </div>
-                    </a>
-                    <a href="https://www.linkedin.com/in/shivam-kumar-a03789437" target="_blank" class="contact-card">
-                        <div class="contact-card-icon"><i class="fa-brands fa-linkedin-in" style="color:#0a66c2;"></i></div>
-                        <div class="contact-info">
-                            <div class="label">LinkedIn</div>
-                            <div class="val">Shivam Kumar</div>
-                        </div>
-                    </a>
-                    <a href="https://github.com/sk604246282-rgb" target="_blank" class="contact-card">
-    <div class="contact-card-icon"><i class="fa-brands fa-github-alt" style="color:#f3f4f6;"></i></div>
-    <div class="contact-info">
-        <div class="label">GitHub</div>
-        <div class="val">sk604246282-rgb</div>
+  <!-- PROFILE HEADER -->
+  <header class="hero">
+    <div>
+      <div class="eyebrow">Biotechnology · Technology · Research</div>
+      <h1>Shivam <span>Kumar</span></h1>
+      <div class="role">B.Tech Biotechnology Student</div>
+      <p>
+        Lovely Professional University (LPU). Interested in life sciences,
+        molecular biology, biological systems, research and technology.
+      </p>
     </div>
-                    </a>
-                    
+
+    <div class="avatar">
+      <img src="photo.jpg.png"
+           alt="Shivam Kumar profile photo"
+           onerror="this.style.display='none'; this.parentElement.innerHTML='<strong style=&quot;color:#22d3c5;font-size:30px&quot;>SK</strong>';">
+    </div>
+  </header>
+
+  <!-- ABOUT ME -->
+  <section class="section">
+    <h2 class="section-title"><span>01</span> About Me</h2>
+    <div class="summary">
+      I am a dedicated B.Tech Biotechnology student at Lovely Professional
+      University. I am interested in life sciences, molecular biology,
+      biological research and computational approaches. I aim to strengthen
+      my academic and practical knowledge and contribute to innovative
+      healthcare, biological and environmental solutions.
+    </div>
+  </section>
+
+  <!-- CAREER OBJECTIVE -->
+  <section class="section">
+    <h2 class="section-title"><span>02</span> Career Objective</h2>
+    <div class="summary">
+      My goal is to develop strong foundations in biotechnology, biological
+      research, molecular biology and bioprocessing. I want to gain practical
+      experience through internships and projects while exploring the
+      applications of technology and data analysis in life sciences.
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="section">
+    <h2 class="section-title"><span>03</span> Education</h2>
+
+    <div class="grid">
+      <div class="mini-card">
+        <h3><i class="fa-solid fa-dna"></i> B.Tech Biotechnology</h3>
+        <div class="sub">Lovely Professional University</div>
+        <span class="tag">2026–2030</span>
+      </div>
+
+      <div class="mini-card">
+        <h3><i class="fa-solid fa-graduation-cap"></i> Class 12th</h3>
+        <div class="sub">Utkramit Uchch Madhyamik Vidyalay, Bihar</div>
+        <span class="tag">80% Marks</span>
+      </div>
+
+      <div class="mini-card">
+        <h3><i class="fa-solid fa-school"></i> Class 10th</h3>
+        <div class="sub">Modern English School, Bihar</div>
+        <span class="tag">72.6% Marks</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERNSHIP DOMAINS -->
+  <section class="section">
+    <h2 class="section-title"><span>04</span> Target Internship Domains</h2>
+
+    <div class="grid">
+      <div class="mini-card">
+        <h3>Bioprocess & Industrial Biotechnology</h3>
+        <p>Fermentation, bioreactors, process development and quality control.</p>
+      </div>
+
+      <div class="mini-card">
+        <h3>Genetic Engineering & Molecular Biology</h3>
+        <p>Recombinant DNA technology, gene expression and molecular techniques.</p>
+      </div>
+
+      <div class="mini-card">
+        <h3>Bioinformatics & Computational Biology</h3>
+        <p>Biological sequence analysis and biological data interpretation.</p>
+      </div>
+
+      <div class="mini-card">
+        <h3>Data Science & Health-Tech Analytics</h3>
+        <p>Computational methods and analytics for biological and healthcare data.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECHNICAL SKILLS -->
+  <section class="section">
+    <h2 class="section-title"><span>05</span> Technical Skills</h2>
+
+    <div class="grid">
+      <div class="mini-card">
+        <h3>Programming & Computing</h3>
+
+        <div class="skill">
+          <div class="skill-top"><span>Python</span><span>40%</span></div>
+          <div class="bar"><span style="width:40%"></span></div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-top"><span>Java</span><span>40%</span></div>
+          <div class="bar"><span style="width:40%"></span></div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-top"><span>MS Excel</span><span>80%</span></div>
+          <div class="bar"><span style="width:80%"></span></div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-top"><span>Cybersecurity</span><span>80%</span></div>
+          <div class="bar"><span style="width:80%"></span></div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-top"><span>Data Science</span><span>25%</span></div>
+          <div class="bar"><span style="width:25%"></span></div>
+        </div>
+      </div>
+
+      <div class="mini-card">
+        <h3>Core & Professional Skills</h3>
+
+        <div class="skill">
+          <div class="skill-top"><span>Molecular Biology</span><span>58%</span></div>
+          <div class="bar"><span style="width:58%"></span></div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-top"><span>Bioprocess Engineering</span><span>48%</span></div>
+          <div class="bar"><span style="width:48%"></span></div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-top"><span>Research Techniques</span><span>42%</span></div>
+          <div class="bar"><span style="width:42%"></span></div>
+        </div>
+
+        <div class="pill-row">
+          <span class="tag">Communication</span>
+          <span class="tag">Problem Solving</span>
+          <span class="tag">Teamwork</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section">
+    <h2 class="section-title"><span>06</span> Projects & Innovations</h2>
+
+    <div class="project">
+      <h3><i class="fa-solid fa-fire-extinguisher"></i>
+        IoT-Enabled Automated Fire Detection & Suppression System
+      </h3>
+      <p>
+        Designed an IoT-enabled prototype integrating sensors and automated
+        alert or suppression functions to support early fire detection
+        and improve safety monitoring.
+      </p>
+      <span class="tag">IoT</span>
+      <span class="tag">Sensors</span>
+      <span class="tag">Embedded Systems</span>
+    </div>
+
+    <div class="project">
+      <h3><i class="fa-solid fa-lightbulb"></i>
+        Automatic Night Light System using LDR & Arduino
+      </h3>
+      <p>
+        Built an automatic lighting system using an LDR sensor and Arduino
+        to control a light based on the surrounding light intensity.
+      </p>
+      <span class="tag">Arduino</span>
+      <span class="tag">LDR Sensor</span>
+      <span class="tag">Circuit Design</span>
+    </div>
+  </section>
+
+  <!-- PROFESSIONAL STRENGTHS -->
+  <section class="section">
+    <h2 class="section-title"><span>07</span> Professional Strengths</h2>
+    <div class="mini-card">
+      <span class="tag">Communication</span>
+      <span class="tag">Problem Solving</span>
+      <span class="tag">Analytical Thinking</span>
+      <span class="tag">Research Interest</span>
+      <span class="tag">Project Planning</span>
+      <span class="tag">Interdisciplinary Learning</span>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section">
+    <h2 class="section-title"><span>08</span> Contact Information</h2>
+
+    <div class="contact-grid">
+      <a class="contact" href="mailto:sk604246282@gmail.com">
+        <i class="fa-solid fa-envelope"></i>
+        <span><small>Email</small>
+        <strong>sk604246282@gmail.com</strong></span>
+      </a>
+
+      <a class="contact" href="tel:+919973075004">
+        <i class="fa-solid fa-phone"></i>
+        <span><small>Phone</small>
+        <strong>+91 9973075004</strong></span>
+      </a>
+
+      <a class="contact"
+         href="https://www.linkedin.com/in/shivam-kumar-a03789437"
+         target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-linkedin"></i>
+        <span><small>LinkedIn</small>
+        <strong>Shivam Kumar</strong></span>
+      </a>
+
+      <a class="contact"
+         href="https://github.com/sk604246282-rgb"
+         target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-github"></i>
+        <span><small>GitHub</small>
+        <strong>sk604246282-rgb</strong></span>
+      </a>
+
+      <a class="contact"
+         href="https://www.lpu.in/"
+         target="_blank" rel="noopener noreferrer">
+        <i class="fa-solid fa-building-columns"></i>
+        <span><small>University</small>
+        <strong>Lovely Professional University</strong></span>
+      </a>
+    </div>
+  </section>
+
+  <!-- SUMMARY -->
+  <section class="section">
+    <h2 class="section-title"><span>09</span> Professional Summary</h2>
+    <div class="summary">
+      A biotechnology undergraduate building an interdisciplinary foundation
+      across life sciences, research and technology. Interested in practical
+      learning, internships and collaborative projects that connect biological
+      systems with data-driven and engineering solutions.
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Shivam Kumar | Personal Portfolio
+  </footer>
+
+</main>
+</body>
+</html>
